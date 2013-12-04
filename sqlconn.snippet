@@ -1,0 +1,46 @@
+ 
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Фрагмент connection</Title>
+            <Shortcut>conn</Shortcut>
+            <Description>Фрагмент connection</Description>
+            <Author>ShevyakovDY</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>cs</ID>
+                    <ToolTip>connection string</ToolTip>
+                    <Default>cs</Default>
+                </Literal>
+                <Literal>
+                    <ID>var</ID>
+                    <ToolTip>command text</ToolTip>
+                    <Default>"";</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+  
+using (var conn = new SqlConnection($cs$))
+{
+	conn.Open();
+	using (var scmd = conn.CreateCommand())
+	{
+		scmd.CommandText = $var$;
+		scmd.ExecuteNonQuery();
+	}
+}
+
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
+
+
