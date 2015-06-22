@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Фрагмент command</Title>
+            <Shortcut>cmd</Shortcut>
+            <Description>Фрагмент command</Description>
+            <Author>ShevyakovDY</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>commandname</ToolTip>
+                    <Default>DoWork</Default>
+                </Literal>
+                <Literal>
+                    <ID>cmdcname</ID>
+                    <ToolTip>command class name</ToolTip>
+                    <Default>Relay</Default>
+                </Literal>                
+            </Declarations>
+
+            <Code Language="csharp"><![CDATA[
+            #region $name$ Command
+    public ICommand $name$Command { get; private set; }
+    void $name$()
+    {
+      $end$
+    }
+   //$name$Command = new $cmdcname$Command($name$);
+   //bool Can$name$()
+   //{
+   // return true;
+   //}
+    #endregion
+]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
+
+
+
